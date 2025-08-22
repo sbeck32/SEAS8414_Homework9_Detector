@@ -4,8 +4,9 @@ This project implements an end-to-end machine learning pipeline to detect domain
 
 ## Architecture
 The workflow consists of two main Python scripts:
-1.  **`1_train_and_export.py`**: This script uses H2O.ai AutoML to train and select the best model on a DGA dataset, exporting it as a portable MOJO file (`/model/DGA_Leader.zip`).
-2.  **`2_analyze_domain.py`**: This is the core application. It takes a domain name as input, classifies it as DGA or LEGIT, explains the decision using SHAP, and uses Google's Gemini Pro model to generate a context-aware incident response playbook.
+1.  **`1_generate_dga_data.py`**: This script generates a DGA dataset to train your model on.
+2.  **`1_train_and_export.py`**: This script uses H2O.ai AutoML to train and select the best model on a DGA dataset, exporting it as a portable MOJO file (`/model/DGA_Leader.zip`).
+3.  **`2_analyze_domain.py`**: This is the core application. It takes a domain name as input, classifies it as DGA or LEGIT, explains the decision using SHAP, and uses Google's Gemini Pro model to generate a context-aware incident response playbook.
 
 ## Usage
 1.  **Prerequisites:** Python 3.8+, Git, Java 17+.
